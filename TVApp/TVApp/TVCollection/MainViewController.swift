@@ -19,12 +19,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         TvUseCase.getOriginal(with: networkManager) {
-            (tvModelList) in
-            self.originalList = tvModelList
+            (tvModelList) in self.originalList = tvModelList
         }
         TvUseCase.getOriginal(with: networkManager) {
-            (tvModelList) in
-            self.liveList = tvModelList
+            (tvModelList) in self.liveList = tvModelList
         }
     }
 
@@ -42,7 +40,7 @@ class MainViewController: UIViewController {
 
     private func setCollectionView() {
         let screenWidth = UIScreen.main.bounds.width
-        let itemSize = screenWidth < 500 ? screenWidth - 20 : screenWidth / 3 - 20
+        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? screenWidth - 20 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: itemSize, height: 100)
