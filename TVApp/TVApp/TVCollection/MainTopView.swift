@@ -30,15 +30,8 @@ class MainTopView: UIView {
         setUI()
     }
 
-    func setFrameSize(frame: CGRect) {
-        self.frame = frame
-        setSearch()
-    }
-
     private func setUI() {
         setSearch()
-        self.layer.borderWidth = 3
-        self.layer.borderColor = UIColor.red.cgColor
     }
 
     private func setSearch() {
@@ -68,7 +61,7 @@ class MainTopView: UIView {
 }
 
 extension MainTopView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
       return true
     }
 }
