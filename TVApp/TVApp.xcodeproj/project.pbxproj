@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73EF25BE8492004417B3 /* AppDelegate.swift */; };
 		5D4B73F225BE8492004417B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73F125BE8492004417B3 /* SceneDelegate.swift */; };
-		5D4B73F425BE8492004417B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73F325BE8492004417B3 /* ViewController.swift */; };
+		5D4B73F425BE8492004417B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73F325BE8492004417B3 /* MainViewController.swift */; };
 		5D4B73F725BE8492004417B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B73F525BE8492004417B3 /* Main.storyboard */; };
 		5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73F825BE8492004417B3 /* TVApp.xcdatamodeld */; };
 		5D4B73FC25BE8495004417B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B73FB25BE8495004417B3 /* Assets.xcassets */; };
 		5D4B73FF25BE8495004417B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B73FD25BE8495004417B3 /* LaunchScreen.storyboard */; };
+		5D4CE93B25BFAEBF00C9B730 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE93A25BFAEBF00C9B730 /* MainTopView.swift */; };
+		5D4CE93F25BFB09300C9B730 /* ViewController+tabBarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE93E25BFB09300C9B730 /* ViewController+tabBarHeight.swift */; };
+		5D4CE94B25BFD5DD00C9B730 /* MainViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE94A25BFD5DD00C9B730 /* MainViewHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D4B73EC25BE8492004417B3 /* TVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4B73EF25BE8492004417B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4B73F125BE8492004417B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D4B73F325BE8492004417B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D4B73F325BE8492004417B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5D4B73F625BE8492004417B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D4B73F925BE8492004417B3 /* TVApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVApp.xcdatamodel; sourceTree = "<group>"; };
 		5D4B73FB25BE8495004417B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D4B73FE25BE8495004417B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D4B740025BE8495004417B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D4CE93A25BFAEBF00C9B730 /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
+		5D4CE93E25BFB09300C9B730 /* ViewController+tabBarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+tabBarHeight.swift"; sourceTree = "<group>"; };
+		5D4CE94A25BFD5DD00C9B730 /* MainViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,10 @@
 		5D4B73EE25BE8492004417B3 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D4CE93D25BFB07200C9B730 /* Extensions */,
+				5D4CE93725BFA9AA00C9B730 /* TVCollection */,
 				5D4B73EF25BE8492004417B3 /* AppDelegate.swift */,
 				5D4B73F125BE8492004417B3 /* SceneDelegate.swift */,
-				5D4B73F325BE8492004417B3 /* ViewController.swift */,
 				5D4B73F525BE8492004417B3 /* Main.storyboard */,
 				5D4B73FB25BE8495004417B3 /* Assets.xcassets */,
 				5D4B73FD25BE8495004417B3 /* LaunchScreen.storyboard */,
@@ -68,6 +75,24 @@
 				5D4B73F825BE8492004417B3 /* TVApp.xcdatamodeld */,
 			);
 			path = TVApp;
+			sourceTree = "<group>";
+		};
+		5D4CE93725BFA9AA00C9B730 /* TVCollection */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B73F325BE8492004417B3 /* MainViewController.swift */,
+				5D4CE93A25BFAEBF00C9B730 /* MainTopView.swift */,
+				5D4CE94A25BFD5DD00C9B730 /* MainViewHeader.xib */,
+			);
+			path = TVCollection;
+			sourceTree = "<group>";
+		};
+		5D4CE93D25BFB07200C9B730 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D4CE93E25BFB09300C9B730 /* ViewController+tabBarHeight.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +105,7 @@
 				5D4B73E825BE8492004417B3 /* Sources */,
 				5D4B73E925BE8492004417B3 /* Frameworks */,
 				5D4B73EA25BE8492004417B3 /* Resources */,
+				5D4CE95C25BFFB4D00C9B730 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,20 +156,43 @@
 				5D4B73FF25BE8495004417B3 /* LaunchScreen.storyboard in Resources */,
 				5D4B73FC25BE8495004417B3 /* Assets.xcassets in Resources */,
 				5D4B73F725BE8492004417B3 /* Main.storyboard in Resources */,
+				5D4CE94B25BFD5DD00C9B730 /* MainViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D4CE95C25BFFB4D00C9B730 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D4B73E825BE8492004417B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4B73F425BE8492004417B3 /* ViewController.swift in Sources */,
+				5D4B73F425BE8492004417B3 /* MainViewController.swift in Sources */,
 				5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */,
 				5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */,
+				5D4CE93F25BFB09300C9B730 /* ViewController+tabBarHeight.swift in Sources */,
 				5D4B73F225BE8492004417B3 /* SceneDelegate.swift in Sources */,
+				5D4CE93B25BFAEBF00C9B730 /* MainTopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
