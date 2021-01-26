@@ -9,10 +9,14 @@ import Foundation
 
 protocol TvModelListType {
     var list: [TvModel] { get }
+    var count: Int { get }
 }
 
 class TvModelList: TvModelListType {
     let list: [TvModel]
+    var count: Int {
+        return list.count
+    }
     init(list: [TvModel]) {
         self.list = list
     }
