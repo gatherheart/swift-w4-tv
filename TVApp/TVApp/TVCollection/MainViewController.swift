@@ -39,10 +39,11 @@ class MainViewController: UIViewController {
 
     private func setCollectionView() {
         let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
         let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? screenWidth - 20 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: itemSize, height: 100)
+        layout.itemSize = CGSize(width: itemSize, height: (screenHeight-topViewHeight-self.topbarHeight)/2.5)
         layout.minimumInteritemSpacing = 3
         tvCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         tvCollectionView.layer.backgroundColor = UIColor.green.cgColor
