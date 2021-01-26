@@ -19,10 +19,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         TvUseCase.getOriginal(with: networkManager) {
-            (tvModelList) in self.originalList = tvModelList
-        }
-        TvUseCase.getOriginal(with: networkManager) {
-            (tvModelList) in self.liveList = tvModelList
+            (tvModelList) in
+            self.originalList = tvModelList
+            self.tvCollectionView.reloadData()
         }
     }
 
@@ -46,7 +45,6 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: itemSize, height: 100)
         layout.minimumInteritemSpacing = 3
         tvCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        tvCollectionView.layer.borderWidth = 1
         tvCollectionView.layer.backgroundColor = UIColor.green.cgColor
         tvCollectionView.delegate = self
         tvCollectionView.dataSource = self
@@ -68,7 +66,7 @@ extension MainViewController: UICollectionViewDelegate {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return originalList?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TvCollectionViewCell", for: indexPath) as? TvCollectionViewCell else {
@@ -87,7 +85,7 @@ extension MainViewController {
         mainTopView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         mainTopView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         mainTopView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        mainTopView.heightAnchor.constraint(greaterThanOrEqualToConstant: topViewHeight).isActive = true
+        mainTopView.heightAnchor.constraint(equalToConstant: topViewHeight).isActive = true
     }
 
     func setTvCollectionViewConstraints() {
