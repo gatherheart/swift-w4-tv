@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
 
     private func setMainTopView() {
         let screenWidth = UIScreen.main.bounds.size.width
-        mainTopView = MainTopView(frame: CGRect(x: 0, y: self.topbarHeight, width: screenWidth, height: 240))
+        mainTopView = MainTopView(frame: CGRect(x: 0, y: self.topbarHeight, width: screenWidth, height: 180))
 
         self.view.addSubview(mainTopView)
         setMainTopViewConstraints()
@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         mainTopView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         mainTopView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         mainTopView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        mainTopView.heightAnchor.constraint(greaterThanOrEqualToConstant: 240).isActive = true
+        mainTopView.heightAnchor.constraint(greaterThanOrEqualToConstant: 180).isActive = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

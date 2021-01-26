@@ -25,7 +25,23 @@
                 <view contentMode="scaleToFill" id="VQa-VO-6cL">
                     <rect key="frame" x="0.0" y="60" width="414" height="80"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZu-JX-xYL">
+                            <rect key="frame" x="44" y="25" width="326" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="326" id="xjG-Cd-Ey5"/>
+                            </constraints>
+                            <segments>
+                                <segment title="오리지널"/>
+                                <segment title="라이브"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstItem="RZu-JX-xYL" firstAttribute="centerX" secondItem="VQa-VO-6cL" secondAttribute="centerX" id="W1E-Zl-EyA"/>
+                        <constraint firstItem="RZu-JX-xYL" firstAttribute="top" secondItem="VQa-VO-6cL" secondAttribute="top" constant="25" id="djr-bu-bwM"/>
+                    </constraints>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
                     <rect key="frame" x="7" y="8" width="400" height="34"/>
