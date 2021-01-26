@@ -37,20 +37,24 @@
                             </segments>
                         </segmentedControl>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="RZu-JX-xYL" firstAttribute="centerX" secondItem="VQa-VO-6cL" secondAttribute="centerX" id="W1E-Zl-EyA"/>
                         <constraint firstItem="RZu-JX-xYL" firstAttribute="top" secondItem="VQa-VO-6cL" secondAttribute="top" constant="25" id="djr-bu-bwM"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
                     <rect key="frame" x="7" y="8" width="400" height="34"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
+            <constraints>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="8" id="BX4-Qm-bXn"/>
+                <constraint firstAttribute="trailing" secondItem="vsC-VU-sg8" secondAttribute="trailing" constant="7" id="YZX-xD-8j7"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" constant="7" id="ddD-Ha-POF"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -60,9 +64,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
