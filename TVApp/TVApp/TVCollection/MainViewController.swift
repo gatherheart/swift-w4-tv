@@ -91,7 +91,9 @@ extension MainViewController {
         let margins = self.view.safeAreaLayoutGuide
         tvCollectionView.backgroundColor = .green
         tvCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        tvCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        tvCollectionView.topAnchor.constraint(equalTo: mainTopView.bottomAnchor).isActive = true
+        tvCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
+        ).isActive = true
         tvCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         tvCollectionView.centerXAnchor.constraint(equalTo: mainTopView.centerXAnchor).isActive = true
         tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -topViewHeight).isActive = true
