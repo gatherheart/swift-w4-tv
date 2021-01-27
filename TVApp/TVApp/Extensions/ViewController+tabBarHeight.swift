@@ -34,4 +34,7 @@ extension UIViewController {
             return UIApplication.shared.statusBarFrame.height
         }
     }
+    var navigationBarHeight: CGFloat {
+        return self.navigationController?.navigationBar.frame.height ?? 0.0
+    }
 }
