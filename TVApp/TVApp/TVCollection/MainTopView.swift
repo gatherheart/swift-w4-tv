@@ -23,7 +23,7 @@ class MainTopView: UIView {
 
     private func commonInit() {
         let bundle = Bundle.init(for: self.classForCoder)
-        guard let view = bundle.loadNibNamed("MainViewHeader", owner: self, options: nil)?.first as? UIView else { return }
+        guard let view = bundle.loadNibNamed("MainTopView", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         self.addSubview(view)
         setConstraints(view: view)

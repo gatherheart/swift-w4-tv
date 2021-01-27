@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTopView" customModule="TVApp" customModuleProvider="target">
+            <connections>
+                <outlet property="search" destination="vsC-VU-sg8" id="9tU-YK-PVZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="COq-OF-srm">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-zm-zAc">
+                    <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="71D-Iu-ANZ"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
+                    <rect key="frame" x="7" y="8" width="400" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="tfd-bO-M8L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-VO-6cL">
+                    <rect key="frame" x="0.0" y="60" width="413" height="80"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZu-JX-xYL">
+                            <rect key="frame" x="39" y="25" width="336" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="42h-0O-zfR"/>
+                                <constraint firstAttribute="height" constant="30" id="Liu-9v-DBA"/>
+                                <constraint firstAttribute="width" constant="336" id="WkO-vt-YpY"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="336" id="cvb-wi-E2T"/>
+                            </constraints>
+                            <segments>
+                                <segment title="오리지널"/>
+                                <segment title="라이브"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" identifier="BottomView" label="BottomView">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstItem="RZu-JX-xYL" firstAttribute="leading" secondItem="VQa-VO-6cL" secondAttribute="leading" constant="39" id="2NZ-L8-36D"/>
+                        <constraint firstAttribute="trailing" secondItem="RZu-JX-xYL" secondAttribute="trailing" constant="38" id="HfM-Fj-7jW"/>
+                        <constraint firstAttribute="height" constant="80" id="hcE-23-BwV"/>
+                        <constraint firstAttribute="bottom" secondItem="RZu-JX-xYL" secondAttribute="bottom" constant="25" id="pRU-Ii-rvf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemGrayColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eB3-zm-zAc" secondAttribute="trailing" id="2tF-Gd-EbG"/>
+                <constraint firstAttribute="trailing" secondItem="vsC-VU-sg8" secondAttribute="trailing" constant="7" id="8Ch-IV-UY2"/>
+                <constraint firstAttribute="bottom" secondItem="VQa-VO-6cL" secondAttribute="bottom" id="Cqu-oe-qJj"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="COq-OF-srm" secondAttribute="centerX" id="I4L-tL-CbN"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="50" id="KtT-HB-s5R"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="UAL-nK-65S"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="8" id="r9C-Wl-6Iv"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" constant="7" id="usE-7a-MRo"/>
+                <constraint firstItem="VQa-VO-6cL" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="zrC-0v-Duj"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="244.92753623188409" y="576.5625"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

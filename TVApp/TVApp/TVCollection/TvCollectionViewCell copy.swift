@@ -16,7 +16,6 @@ class TvCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.borderWidth = 2
-        self.backgroundColor = .darkGray
     }
 
 }
