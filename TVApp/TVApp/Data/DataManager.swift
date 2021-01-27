@@ -22,7 +22,6 @@ class BundleManager: BundleManable {
         guard let url = Bundle.main.url(forResource: from, withExtension: "json") else { throw BundleDataErrorCase.notFound }
         do {
             let data = try Data(contentsOf: url)
-            print(data)
             completion(data, nil)
         } catch let error {
             completion(nil, error)

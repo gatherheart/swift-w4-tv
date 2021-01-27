@@ -31,7 +31,6 @@ struct TvUseCase {
             (data, _) in
             if let tvData = data {
                 let tvModels = try? JSONDecoder().decode([TvModel].self, from: tvData)
-                print(tvModels)
                 completed(TvModelList(list: tvModels ?? [TvModel]()))
             }
         }

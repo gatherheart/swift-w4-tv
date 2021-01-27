@@ -25,6 +25,7 @@
 		5D4CE98225C0F48500C9B730 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE98125C0F48500C9B730 /* DataManager.swift */; };
 		5D4CE98725C107EA00C9B730 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98525C107EA00C9B730 /* live.json */; };
 		5D4CE98825C107EA00C9B730 /* original.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98625C107EA00C9B730 /* original.json */; };
+		5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5D4CE98125C0F48500C9B730 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5D4CE98525C107EA00C9B730 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = live.json; path = ../../../../../../Downloads/live.json; sourceTree = "<group>"; };
 		5D4CE98625C107EA00C9B730 /* original.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = original.json; path = ../../../../../../Downloads/original.json; sourceTree = "<group>"; };
+		5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				5D4CE94A25BFD5DD00C9B730 /* MainTopView.xib */,
 				5D4CE96F25C0186400C9B730 /* TvCollectionViewCell copy.swift */,
 				5D4CE96925C0050A00C9B730 /* TvCollectionViewCell.xib */,
+				5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */,
 			);
 			path = TVCollection;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4B73F425BE8492004417B3 /* MainViewController.swift in Sources */,
+				5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */,
 				5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */,
 				5D4CE97625C04C6400C9B730 /* Network.swift in Sources */,
 				5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */,
