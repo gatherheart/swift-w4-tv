@@ -8,8 +8,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var mainTopView: MainTopView!
     var tvCollectionView: TvCollectionView!
+    var mainTopView: UIView!
     var topViewHeight: CGFloat = 120
     let bundleManager: BundleManager = BundleManager()
     var originalList: TvModelListType!
@@ -32,8 +32,10 @@ class MainViewController: UIViewController {
     }
 
     private func setMainTopView() {
-        mainTopView = MainTopView(frame: CGRect.zero)
-        self.view.addSubview(mainTopView)
+        let bundle = Bundle.init(for: self.classForCoder)
+        guard let subView = bundle.loadNibNamed("MainTopView", owner: self, options: nil)?.first as? UIView else { return }
+        self.view.addSubview(subView)
+        mainTopView = subView
         setMainTopViewConstraints()
     }
 
