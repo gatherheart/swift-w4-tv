@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     var tvCollectionView: TvCollectionView!
     var mainTopView: UIView!
-    var topViewHeight: CGFloat = 150
+    var topViewHeight: CGFloat = 120
     let bundleManager: BundleManager = BundleManager()
     var originalList: TvModelListType!
     var liveList: TvModelListType!
@@ -43,10 +43,10 @@ class MainViewController: UIViewController {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         let maxCollectionViewHeight = screenHeight - self.topbarHeight
-        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? maxCollectionViewHeight/2 - 20: screenWidth / 3 - 20
+        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? maxCollectionViewHeight/2 - 20 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: itemSize, height: (maxCollectionViewHeight-self.topViewHeight)/2.5)
+        layout.itemSize = CGSize(width: itemSize, height: (maxCollectionViewHeight-self.topViewHeight)/2.3)
         tvCollectionView = TvCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         tvCollectionView.config(sender: self)
         self.view.addSubview(tvCollectionView)
@@ -72,7 +72,7 @@ extension MainViewController: UICollectionViewDataSource {
             return TvCollectionViewCell()
         }
         cell.backgroundColor = .red
-
+        cell.config(tvModel: originalList[indexPath.row])
         return cell
     }
 }
