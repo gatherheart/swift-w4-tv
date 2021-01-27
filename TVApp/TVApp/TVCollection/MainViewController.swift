@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     var tvCollectionView: TvCollectionView!
     var mainTopView: UIView!
-    var topViewHeight: CGFloat = 120
+    var topViewHeight: CGFloat = 150
     let bundleManager: BundleManager = BundleManager()
     var originalList: TvModelListType!
     var liveList: TvModelListType!
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? collectionViewHeight/2 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: itemSize, height: (screenHeight-topViewHeight-self.topbarHeight)/2.5)
+        layout.itemSize = CGSize(width: itemSize, height: collectionViewHeight/2.5)
         layout.minimumInteritemSpacing = 10
         
         tvCollectionView = TvCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -85,17 +85,17 @@ extension MainViewController {
         mainTopView.translatesAutoresizingMaskIntoConstraints = false
         mainTopView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         mainTopView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
-        mainTopView.heightAnchor.constraint(equalToConstant: topViewHeight).isActive = true
+        mainTopView.heightAnchor.constraint(lessThanOrEqualToConstant: topViewHeight).isActive = true
+        mainTopView.layer.borderWidth = 1
     }
 
     func setTvCollectionViewConstraints() {
         let margins = self.view.safeAreaLayoutGuide
-        let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
         tvCollectionView.backgroundColor = .green
         tvCollectionView.translatesAutoresizingMaskIntoConstraints = false
         tvCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
         tvCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         tvCollectionView.centerXAnchor.constraint(equalTo: mainTopView.centerXAnchor).isActive = true
-        tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -navigationBarHeight-topViewHeight).isActive = true
+        tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -topViewHeight).isActive = true
     }
 }
