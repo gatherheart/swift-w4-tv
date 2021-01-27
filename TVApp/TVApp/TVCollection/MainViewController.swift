@@ -11,16 +11,17 @@ class MainViewController: UIViewController {
     var mainTopView: MainTopView!
     var tvCollectionView: UICollectionView!
     var topViewHeight: CGFloat = 120
-    let networkManager: NetworkManable = NetworkManager()
+    let bundleManager: BundleManager = BundleManager()
     var originalList: TvModelListType!
     var liveList: TvModelListType!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        TvUseCase.getOriginal(with: networkManager) {
+        TvUseCase.getOriginal(with: bundleManager) {
             (tvModelList) in
             self.originalList = tvModelList
+            print(self.originalList)
             self.tvCollectionView.reloadData()
         }
     }
@@ -40,13 +41,16 @@ class MainViewController: UIViewController {
     private func setCollectionView() {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
-        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? screenWidth - 20 : screenWidth / 3 - 20
+        let collectionViewHeight = screenHeight-topViewHeight-self.topbarHeight
+        print(screenHeight-topViewHeight-self.topbarHeight)
+        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? collectionViewHeight/2 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: itemSize, height: (screenHeight-topViewHeight-self.topbarHeight)/2.5)
-        layout.minimumInteritemSpacing = 3
+        layout.minimumInteritemSpacing = 10
         tvCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         tvCollectionView.layer.backgroundColor = UIColor.green.cgColor
+        tvCollectionView.showsVerticalScrollIndicator = false
         tvCollectionView.delegate = self
         tvCollectionView.dataSource = self
         tvCollectionView.register(TvCollectionViewCell.self, forCellWithReuseIdentifier: "TvCollectionViewCell")
@@ -85,18 +89,17 @@ extension MainViewController {
         mainTopView.translatesAutoresizingMaskIntoConstraints = false
         mainTopView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         mainTopView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
-        mainTopView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
         mainTopView.heightAnchor.constraint(equalToConstant: topViewHeight).isActive = true
     }
 
     func setTvCollectionViewConstraints() {
         let margins = self.view.safeAreaLayoutGuide
+        let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
         tvCollectionView.backgroundColor = .green
         tvCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        tvCollectionView.topAnchor.constraint(equalTo: mainTopView.bottomAnchor).isActive = true
         tvCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
         tvCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         tvCollectionView.centerXAnchor.constraint(equalTo: mainTopView.centerXAnchor).isActive = true
-        tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -topViewHeight-self.topbarHeight).isActive = true
+        tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -navigationBarHeight-topViewHeight).isActive = true
     }
 }

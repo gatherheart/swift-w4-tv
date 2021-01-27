@@ -26,4 +26,23 @@ struct TvUseCase {
             }
         }
     }
+    static func getOriginal(with manager: BundleManable, completed: @escaping (TvModelList?) -> Void) {
+        try? manager.getResource(from: "original") {
+            (data, _) in
+            if let tvData = data {
+                let tvModels = try? JSONDecoder().decode([TvModel].self, from: tvData)
+                print(tvModels)
+                completed(TvModelList(list: tvModels ?? [TvModel]()))
+            }
+        }
+    }
+    static func getLive(with manager: BundleManable, completed: @escaping (TvModelList?) -> Void) {
+        try? manager.getResource(from: "live") {
+            (data, _) in
+            if let tvData = data {
+                let tvModels = try? JSONDecoder().decode([TvModel].self, from: tvData)
+                completed(TvModelList(list: tvModels ?? [TvModel]()))
+            }
+        }
+    }
 }
