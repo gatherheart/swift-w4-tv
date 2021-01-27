@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     var mainTopView: MainTopView!
-    var tvCollectionView: UICollectionView!
+    var tvCollectionView: TvCollectionView!
     var topViewHeight: CGFloat = 120
     let bundleManager: BundleManager = BundleManager()
     var originalList: TvModelListType!
@@ -21,7 +21,6 @@ class MainViewController: UIViewController {
         TvUseCase.getOriginal(with: bundleManager) {
             (tvModelList) in
             self.originalList = tvModelList
-            print(self.originalList)
             self.tvCollectionView.reloadData()
         }
     }
@@ -42,21 +41,16 @@ class MainViewController: UIViewController {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         let collectionViewHeight = screenHeight-topViewHeight-self.topbarHeight
-        print(screenHeight-topViewHeight-self.topbarHeight)
         let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? collectionViewHeight/2 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: itemSize, height: (screenHeight-topViewHeight-self.topbarHeight)/2.5)
         layout.minimumInteritemSpacing = 10
-        tvCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        tvCollectionView.layer.backgroundColor = UIColor.green.cgColor
-        tvCollectionView.showsVerticalScrollIndicator = false
-        tvCollectionView.delegate = self
-        tvCollectionView.dataSource = self
-        tvCollectionView.register(TvCollectionViewCell.self, forCellWithReuseIdentifier: "TvCollectionViewCell")
+        
+        tvCollectionView = TvCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        tvCollectionView.config(sender: self)
         self.view.addSubview(tvCollectionView)
         setTvCollectionViewConstraints()
-
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
