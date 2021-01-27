@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-zm-zAc">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-zm-zAc" userLabel="Divider">
                     <rect key="frame" x="0.0" y="50" width="414" height="1"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -21,23 +21,17 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
-                    <rect key="frame" x="7" y="8" width="400" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="400" id="tfd-bO-M8L"/>
-                    </constraints>
+                    <rect key="frame" x="10" y="8" width="394" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-VO-6cL">
-                    <rect key="frame" x="0.0" y="60" width="413" height="80"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-VO-6cL" userLabel="BottomView">
+                    <rect key="frame" x="0.0" y="60" width="414" height="80"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZu-JX-xYL">
-                            <rect key="frame" x="39" y="25" width="336" height="31"/>
+                            <rect key="frame" x="39" y="24" width="337" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="42h-0O-zfR"/>
-                                <constraint firstAttribute="height" constant="30" id="Liu-9v-DBA"/>
-                                <constraint firstAttribute="width" constant="336" id="WkO-vt-YpY"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="336" id="cvb-wi-E2T"/>
                             </constraints>
                             <segments>
                                 <segment title="오리지널"/>
@@ -50,8 +44,8 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <constraints>
-                        <constraint firstItem="RZu-JX-xYL" firstAttribute="leading" secondItem="VQa-VO-6cL" secondAttribute="leading" constant="39" id="2NZ-L8-36D"/>
                         <constraint firstAttribute="trailing" secondItem="RZu-JX-xYL" secondAttribute="trailing" constant="38" id="HfM-Fj-7jW"/>
+                        <constraint firstItem="RZu-JX-xYL" firstAttribute="leading" secondItem="VQa-VO-6cL" secondAttribute="leading" constant="39" id="O4y-6x-SYs"/>
                         <constraint firstAttribute="height" constant="80" id="hcE-23-BwV"/>
                         <constraint firstAttribute="bottom" secondItem="RZu-JX-xYL" secondAttribute="bottom" constant="25" id="pRU-Ii-rvf"/>
                     </constraints>
@@ -59,15 +53,19 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="eB3-zm-zAc" secondAttribute="trailing" id="2tF-Gd-EbG"/>
-                <constraint firstAttribute="trailing" secondItem="vsC-VU-sg8" secondAttribute="trailing" constant="7" id="8Ch-IV-UY2"/>
-                <constraint firstAttribute="bottom" secondItem="VQa-VO-6cL" secondAttribute="bottom" id="Cqu-oe-qJj"/>
-                <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="COq-OF-srm" secondAttribute="centerX" id="I4L-tL-CbN"/>
-                <constraint firstItem="eB3-zm-zAc" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="50" id="KtT-HB-s5R"/>
-                <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="UAL-nK-65S"/>
-                <constraint firstItem="vsC-VU-sg8" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="8" id="r9C-Wl-6Iv"/>
-                <constraint firstItem="vsC-VU-sg8" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" constant="7" id="usE-7a-MRo"/>
-                <constraint firstItem="VQa-VO-6cL" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="zrC-0v-Duj"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" constant="10" id="3UC-oU-L3B"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="5z4-Kl-AqM"/>
+                <constraint firstAttribute="trailing" secondItem="vsC-VU-sg8" secondAttribute="trailing" constant="10" id="8rx-vd-7Pr"/>
+                <constraint firstAttribute="trailing" secondItem="VQa-VO-6cL" secondAttribute="trailing" id="KZ4-JE-cz0"/>
+                <constraint firstItem="VQa-VO-6cL" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="Kcq-1o-N5D"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="centerX" secondItem="COq-OF-srm" secondAttribute="centerX" id="L0Z-vs-bOT"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="VQa-VO-6cL" secondAttribute="leading" id="Ssm-Re-Ddt"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="top" secondItem="vsC-VU-sg8" secondAttribute="bottom" constant="8" symbolic="YES" id="gXn-Pn-Zzw"/>
+                <constraint firstItem="vsC-VU-sg8" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="8" id="nrb-Fd-XFc"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="VQa-VO-6cL" secondAttribute="centerX" id="p76-4H-Q3Q"/>
+                <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="vsC-VU-sg8" secondAttribute="centerX" id="qkI-vI-8SP"/>
+                <constraint firstAttribute="bottom" secondItem="VQa-VO-6cL" secondAttribute="bottom" id="sDh-k5-V2t"/>
+                <constraint firstItem="VQa-VO-6cL" firstAttribute="top" secondItem="eB3-zm-zAc" secondAttribute="bottom" constant="9" id="yrF-k7-xRf"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
