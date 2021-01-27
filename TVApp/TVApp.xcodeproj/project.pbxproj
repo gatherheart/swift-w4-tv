@@ -25,6 +25,7 @@
 		5D4CE98725C107EA00C9B730 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98525C107EA00C9B730 /* live.json */; };
 		5D4CE98825C107EA00C9B730 /* original.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98625C107EA00C9B730 /* original.json */; };
 		5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */; };
+		5D4CE99425C1A6D000C9B730 /* CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5D4CE98525C107EA00C9B730 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = live.json; path = ../../../../../../Downloads/live.json; sourceTree = "<group>"; };
 		5D4CE98625C107EA00C9B730 /* original.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = original.json; path = ../../../../../../Downloads/original.json; sourceTree = "<group>"; };
 		5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvCollectionView.swift; sourceTree = "<group>"; };
+		5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		5D4CE99125C1A4FF00C9B730 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5D4CE93F25BFB09300C9B730 /* ViewController+tabBarHeight.swift in Sources */,
 				5D4B73F225BE8492004417B3 /* SceneDelegate.swift in Sources */,
 				5D4CE97025C0186500C9B730 /* TvCollectionViewCell copy.swift in Sources */,
+				5D4CE99425C1A6D000C9B730 /* CollectionViewCellModel.swift in Sources */,
 				5D4CE97D25C055B700C9B730 /* TvUseCase.swift in Sources */,
 				5D4CE98225C0F48500C9B730 /* DataManager.swift in Sources */,
 				5D4CE97A25C04D8C00C9B730 /* TvModel.swift in Sources */,

@@ -50,6 +50,7 @@ struct TvModel: Codable {
     let clip: Clip?
     let live: Live?
     let videoType: VideoType
+    let duration: Int
 }
 
 struct Live: Codable {
@@ -66,6 +67,7 @@ struct Channel: Codable {
 }
 
 struct Clip: Codable {
+    let playCount: Int
     let duration: Int
     let thumbnailUrl: String
     let createTime: String
