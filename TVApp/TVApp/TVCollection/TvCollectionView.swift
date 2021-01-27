@@ -21,7 +21,8 @@ class TvCollectionView: UICollectionView {
         self.showsVerticalScrollIndicator = false
         self.delegate = sender as? UICollectionViewDelegate
         self.dataSource = sender as? UICollectionViewDataSource
-        self.register(TvCollectionViewCell.self, forCellWithReuseIdentifier: "TvCollectionViewCell")
+        let tvCollectionViewCell = UINib(nibName: "TvCollectionViewCell", bundle: nil)
+        self.register(tvCollectionViewCell, forCellWithReuseIdentifier: "TvCollectionViewCell")
     }
     
 }
