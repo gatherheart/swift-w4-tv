@@ -22,7 +22,7 @@ class MainTopView: UIView {
     }
 
     private func commonInit() {
-        
+
     }
 
     private func setUI() {

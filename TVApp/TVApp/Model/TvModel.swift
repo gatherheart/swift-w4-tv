@@ -35,22 +35,21 @@ class TvModelList: TvModelListType {
 }
 
 struct TvModel: Codable {
-    
+
     enum VideoType: String, Codable {
         case CLIP, LIVE
     }
-    
+
     let id: Int
     let channelId: Int
     let clipId: Int?
     let liveId: Int?
-    let displayTitle: String?
+    let displayTitle: String
     let createTime: String?
     let channel: Channel
     let clip: Clip?
     let live: Live?
     let videoType: VideoType
-    let duration: Int
 }
 
 struct Live: Codable {
