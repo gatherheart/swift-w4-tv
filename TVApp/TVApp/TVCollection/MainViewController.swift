@@ -40,15 +40,9 @@ class MainViewController: UIViewController {
     }
 
     private func setCollectionView() {
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        let maxCollectionViewHeight = screenHeight - self.topbarHeight
-        let itemSize = UIDevice.current.userInterfaceIdiom == .phone ? maxCollectionViewHeight/2 - 20 : screenWidth / 3 - 20
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: itemSize, height: (maxCollectionViewHeight-self.topViewHeight)/2.3)
         tvCollectionView = TvCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        tvCollectionView.config(sender: self)
+        tvCollectionView.config(sender: self, topOffset: self.topViewHeight)
         self.view.addSubview(tvCollectionView)
         setTvCollectionViewConstraints()
     }
@@ -72,7 +66,7 @@ extension MainViewController: UICollectionViewDataSource {
             return TvCollectionViewCell()
         }
         cell.backgroundColor = .red
-        cell.config(tvModel: originalList[indexPath.row])
+        cell.config(viewModel: TvCollectionViewCellModel(tvModel: originalList[indexPath.row]))
         return cell
     }
 }
@@ -84,7 +78,6 @@ extension MainViewController {
         mainTopView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         mainTopView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
         mainTopView.heightAnchor.constraint(equalToConstant: topViewHeight).isActive = true
-        mainTopView.layer.borderWidth = 1
     }
 
     func setTvCollectionViewConstraints() {
