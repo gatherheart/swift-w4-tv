@@ -14,7 +14,7 @@ class TvModelController {
     init() {
         getTvList()
     }
-    
+
     private func getTvList() {
         TvUseCase.getOriginal(with: bundleManager) {
             (tvModelList) in
@@ -29,7 +29,7 @@ class TvModelController {
     func get(index: Int) -> TvModel {
         return tvList[index]
     }
-    
+
     func filteredTvList(with filter: String?=nil, limit: Int?=nil) -> [TvModel] {
         let filtered = tvList.filter { $0.contains(filter) }
         if let limit = limit {
@@ -38,7 +38,7 @@ class TvModelController {
             return filtered
         }
     }
-    
+
     func filteredTvList(with filter: TvModel.VideoType?=nil, limit: Int?=nil) -> [TvModel] {
         let filtered = tvList.filter { $0.videoType == (filter) }
         if let limit = limit {
@@ -47,5 +47,5 @@ class TvModelController {
             return filtered
         }
     }
-    
+
 }

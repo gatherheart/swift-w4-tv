@@ -30,42 +30,38 @@ struct TvCollectionViewCellModel {
         viewCount = TvCollectionViewCellModel.getViewCountFromTvModel(tvModel: tvModel)
         createTime = TvCollectionViewCellModel.getCreateTimeFromTvModel(tvModel: tvModel)
     }
-    
+
     private static func getImageFromTvModel(tvModel: TvModel) -> UIImage? {
         if tvModel.videoType == .CLIP {
             return UIImage(named: tvModel.clip?.thumbnailUrl ?? "default")
-        }
-        else if tvModel.videoType == .LIVE {
+        } else if tvModel.videoType == .LIVE {
             return UIImage(named: tvModel.live?.thumbnailUrl ?? "default")
         }
         return nil
     }
-    
+
     private static func getViewCountFromTvModel(tvModel: TvModel) -> String {
         if tvModel.videoType == .CLIP {
             return TvCollectionViewCellModel.changeViewCountFormat(viewCount: tvModel.clip?.playCount ?? 0)
-        }
-        else if tvModel.videoType == .LIVE {
+        } else if tvModel.videoType == .LIVE {
             return TvCollectionViewCellModel.changeViewCountFormat(viewCount: tvModel.live?.playCount ?? 0)
         }
         return ""
     }
-    
+
     private static func getDurationFromTvModel(tvModel: TvModel) -> String {
         if tvModel.videoType == .CLIP {
             return TvCollectionViewCellModel.changeDurationFormat(duration: tvModel.clip?.duration ?? 0)
-        }
-        else if tvModel.videoType == .LIVE {
+        } else if tvModel.videoType == .LIVE {
             return TvCollectionViewCellModel.changeDurationFormat(duration: tvModel.live?.duration ?? 0)
         }
         return ""
     }
-    
+
     private static func getCreateTimeFromTvModel(tvModel: TvModel) -> String {
         if tvModel.videoType == .CLIP {
             return TvCollectionViewCellModel.changeCreateTimeFormat(createTime: tvModel.clip?.createTime ?? "")
-        }
-        else if tvModel.videoType == .LIVE {
+        } else if tvModel.videoType == .LIVE {
             return TvCollectionViewCellModel.changeCreateTimeFormat(createTime: tvModel.live?.createTime ?? "")
         }
         return ""
