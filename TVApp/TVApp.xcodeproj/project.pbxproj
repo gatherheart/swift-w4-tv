@@ -29,6 +29,7 @@
 		5D4CE99F25C2656F00C9B730 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE99E25C2656F00C9B730 /* MainTopView.swift */; };
 		5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */; };
 		5D4CE9A825C2941A00C9B730 /* TvModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A725C2941A00C9B730 /* TvModelController.swift */; };
+		5D50EE2E25C2FA4F0049034B /* TouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5D4CE99E25C2656F00C9B730 /* MainTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = TVApp/TVCollection/View/MainTopView.swift; sourceTree = SOURCE_ROOT; };
 		5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAutoLayout.swift; sourceTree = "<group>"; };
 		5D4CE9A725C2941A00C9B730 /* TvModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvModelController.swift; sourceTree = "<group>"; };
+		5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		5D4B73EE25BE8492004417B3 /* TVApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D50EE3025C2FC4C0049034B /* Service */,
 				5D4CE98425C107E200C9B730 /* Asset */,
 				5D4CE98025C0F47300C9B730 /* Data */,
 				5D4CE97425C04C5300C9B730 /* Network */,
@@ -185,6 +188,14 @@
 				5D4CE9A725C2941A00C9B730 /* TvModelController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D50EE3025C2FC4C0049034B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */,
 				5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */,
 				5D4CE97625C04C6400C9B730 /* Network.swift in Sources */,
+				5D50EE2E25C2FA4F0049034B /* TouchHandler.swift in Sources */,
 				5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */,
 				5D4CE93F25BFB09300C9B730 /* ViewController+tabBarHeight.swift in Sources */,
 				5D4B73F225BE8492004417B3 /* SceneDelegate.swift in Sources */,
