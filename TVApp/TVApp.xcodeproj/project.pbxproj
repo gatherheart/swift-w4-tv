@@ -25,7 +25,10 @@
 		5D4CE98725C107EA00C9B730 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98525C107EA00C9B730 /* live.json */; };
 		5D4CE98825C107EA00C9B730 /* original.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D4CE98625C107EA00C9B730 /* original.json */; };
 		5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */; };
-		5D4CE99425C1A6D000C9B730 /* CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */; };
+		5D4CE99425C1A6D000C9B730 /* TvCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE99325C1A6D000C9B730 /* TvCollectionViewCellModel.swift */; };
+		5D4CE99F25C2656F00C9B730 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE99E25C2656F00C9B730 /* MainTopView.swift */; };
+		5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */; };
+		5D4CE9A825C2941A00C9B730 /* TvModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A725C2941A00C9B730 /* TvModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +52,10 @@
 		5D4CE98525C107EA00C9B730 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = live.json; path = ../../../../../../Downloads/live.json; sourceTree = "<group>"; };
 		5D4CE98625C107EA00C9B730 /* original.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = original.json; path = ../../../../../../Downloads/original.json; sourceTree = "<group>"; };
 		5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvCollectionView.swift; sourceTree = "<group>"; };
-		5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellModel.swift; sourceTree = "<group>"; };
+		5D4CE99325C1A6D000C9B730 /* TvCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		5D4CE99E25C2656F00C9B730 /* MainTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = TVApp/TVCollection/View/MainTopView.swift; sourceTree = SOURCE_ROOT; };
+		5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAutoLayout.swift; sourceTree = "<group>"; };
+		5D4CE9A725C2941A00C9B730 /* TvModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +108,9 @@
 		5D4CE93725BFA9AA00C9B730 /* TVCollection */ = {
 			isa = PBXGroup;
 			children = (
+				5D4CE9A625C293D400C9B730 /* Controller */,
+				5D4CE9A525C293CE00C9B730 /* View */,
 				5D4CE99125C1A4FF00C9B730 /* ViewModel */,
-				5D4B73F325BE8492004417B3 /* MainViewController.swift */,
-				5D4CE94A25BFD5DD00C9B730 /* MainTopView.xib */,
-				5D4CE96F25C0186400C9B730 /* TvCollectionViewCell copy.swift */,
-				5D4CE96925C0050A00C9B730 /* TvCollectionViewCell.xib */,
-				5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */,
 			);
 			path = TVCollection;
 			sourceTree = "<group>";
@@ -157,9 +160,31 @@
 		5D4CE99125C1A4FF00C9B730 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5D4CE99325C1A6D000C9B730 /* CollectionViewCellModel.swift */,
+				5D4CE99325C1A6D000C9B730 /* TvCollectionViewCellModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D4CE9A525C293CE00C9B730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D4CE99E25C2656F00C9B730 /* MainTopView.swift */,
+				5D4CE94A25BFD5DD00C9B730 /* MainTopView.xib */,
+				5D4CE96F25C0186400C9B730 /* TvCollectionViewCell copy.swift */,
+				5D4CE96925C0050A00C9B730 /* TvCollectionViewCell.xib */,
+				5D4CE98A25C1093D00C9B730 /* TvCollectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D4CE9A625C293D400C9B730 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B73F325BE8492004417B3 /* MainViewController.swift */,
+				5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */,
+				5D4CE9A725C2941A00C9B730 /* TvModelController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,15 +284,18 @@
 			files = (
 				5D4B73F425BE8492004417B3 /* MainViewController.swift in Sources */,
 				5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */,
+				5D4CE99F25C2656F00C9B730 /* MainTopView.swift in Sources */,
 				5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */,
+				5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */,
 				5D4CE97625C04C6400C9B730 /* Network.swift in Sources */,
 				5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */,
 				5D4CE93F25BFB09300C9B730 /* ViewController+tabBarHeight.swift in Sources */,
 				5D4B73F225BE8492004417B3 /* SceneDelegate.swift in Sources */,
 				5D4CE97025C0186500C9B730 /* TvCollectionViewCell copy.swift in Sources */,
-				5D4CE99425C1A6D000C9B730 /* CollectionViewCellModel.swift in Sources */,
+				5D4CE99425C1A6D000C9B730 /* TvCollectionViewCellModel.swift in Sources */,
 				5D4CE97D25C055B700C9B730 /* TvUseCase.swift in Sources */,
 				5D4CE98225C0F48500C9B730 /* DataManager.swift in Sources */,
+				5D4CE9A825C2941A00C9B730 /* TvModelController.swift in Sources */,
 				5D4CE97A25C04D8C00C9B730 /* TvModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="TVApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="COq-OF-srm">
+        <view contentMode="scaleToFill" id="COq-OF-srm" customClass="MainTopView" customModule="TVApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -70,6 +70,9 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="segmentController" destination="RZu-JX-xYL" id="IcH-TY-cgy"/>
+            </connections>
             <point key="canvasLocation" x="244.92753623188409" y="575.89285714285711"/>
         </view>
     </objects>
