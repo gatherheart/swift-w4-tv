@@ -12,9 +12,14 @@ class MainViewController: UIViewController {
     var tvCollectionView: TvCollectionView!
     var mainTopView: MainTopView!
     let tvModelController = TvModelController()
+    let touchHandler = TouchHandler()
     var dataSource: UICollectionViewDiffableDataSource<Section, TvModel>!
     var nameFilter: String?
     let topViewHeight: CGFloat = 120
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(goToFavoriteView))
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +27,14 @@ class MainViewController: UIViewController {
     }
 
     private func setUI() {
-        navigationItem.title = "KakaoTV"
+        setNavigationBar()
         setMainTopView()
         setCollectionView()
+    }
+    
+    private func setNavigationBar() {
+        navigationItem.title = "KakaoTV"
+        navigationItem.rightBarButtonItem = rightButton
     }
 
     private func setMainTopView() {
@@ -45,10 +55,22 @@ class MainViewController: UIViewController {
         configureDataSource()
         performQuery(with: TvModel.VideoType.CLIP)
     }
+    
+    @objc private func goToFavoriteView(_ sender: Any) {
+
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        
+        touchHandler.determineGestureType(touches, with: event, completed: nil)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchHandler.determineGestureType(touches, with: event) {type in
+            if type == .longPress {
+                // to-do: Handle Long Press Event
+            }
+        }
     }
 
 }

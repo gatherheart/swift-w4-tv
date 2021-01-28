@@ -23,7 +23,8 @@ extension MainViewController {
         tvCollectionView.topAnchor.constraint(equalTo: mainTopView.bottomAnchor).isActive = true
         tvCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
         ).isActive = true
-        tvCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1.0, constant: 0).isActive = true
+        tvCollectionView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        tvCollectionView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         tvCollectionView.centerXAnchor.constraint(equalTo: mainTopView.centerXAnchor).isActive = true
         tvCollectionView.heightAnchor.constraint(greaterThanOrEqualTo: margins.heightAnchor, multiplier: 1, constant: -topViewHeight).isActive = true
     }
