@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
     }
 
 }
@@ -89,6 +90,7 @@ extension MainViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TvCollectionViewCell", for: indexPath) as? TvCollectionViewCell
             else { return TvCollectionViewCell() }
             cell.config(viewModel: TvCollectionViewCellModel(tvModel: tvModel))
+            cell.backgroundColor = .red
             return cell
         }
     }
