@@ -7,34 +7,7 @@
 
 import Foundation
 
-protocol TvModelListType {
-    var list: [TvModel] { get }
-    var count: Int { get }
-    subscript(index: Int) -> TvModel { get set }
-}
-
-class TvModelList: TvModelListType {
-    var list: [TvModel]
-    var count: Int {
-        return list.count
-    }
-    init(list: [TvModel]) {
-        self.list = list
-    }
-    init() {
-        self.list = [TvModel]()
-    }
-    subscript(index: Int) -> TvModel {
-        get {
-            return self.list[index]
-        }
-        set {
-            self.list[index] = newValue
-        }
-    }
-}
-
-struct TvModel: Codable {
+struct TvModel: Codable, Hashable {
 
     enum VideoType: String, Codable {
         case CLIP, LIVE
@@ -50,6 +23,18 @@ struct TvModel: Codable {
     let clip: Clip?
     let live: Live?
     let videoType: VideoType
+    let identifier = UUID()
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    static func == (lhs: TvModel, rhs: TvModel) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    func contains(_ filter: String?) -> Bool {
+        guard let filterText = filter else { return true }
+        if filterText.isEmpty { return true }
+        return displayTitle.contains(filterText)
+    }
 }
 
 struct Live: Codable {

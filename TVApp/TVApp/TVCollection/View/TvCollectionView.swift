@@ -15,7 +15,10 @@ class TvCollectionView: UICollectionView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.next?.touchesBegan(touches, with: event)
+    }
+    
     func config(sender: Any, topOffset: CGFloat) {
         self.layer.backgroundColor = UIColor.green.cgColor
         self.showsVerticalScrollIndicator = false
