@@ -8,22 +8,19 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    enum Section: CaseIterable {
-        case main
-    }
-    
+
     var tvCollectionView: TvCollectionView!
     var mainTopView: MainTopView!
     let tvModelController = TvModelController()
     var dataSource: UICollectionViewDiffableDataSource<Section, TvModel>!
     var nameFilter: String?
     let topViewHeight: CGFloat = 120
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
-        
+
     private func setUI() {
         navigationItem.title = "KakaoTV"
         setMainTopView()
@@ -56,10 +53,18 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainTopViewDelegate {
-    func didSegmentChange(segmentControll: UISegmentedControl) {
+    func didSegmentChange(segmentControl: UISegmentedControl) {
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            performQuery(with: TvModel.VideoType.CLIP)
+        case 1:
+            performQuery(with: TvModel.VideoType.LIVE)
+        default:
+            performQuery(with: TvModel.VideoType.CLIP)
+
+        }
     }
 }
-
 
 extension MainViewController: UICollectionViewDelegate {
 
@@ -69,28 +74,25 @@ extension MainViewController: UICollectionViewDelegate {
 }
 
 extension MainViewController {
-
+    enum Section: CaseIterable {
+        case main
+    }
     func configureDataSource() {
-        
         let cellRegistration = TvCollectionView.CellRegistration
-        <TvCollectionViewCell, TvModel> { (cell, indexPath, tvModel) in
-            // Populate the cell with our item description.
-            
+        <TvCollectionViewCell, TvModel> { (cell, _, tvModel) in
             cell.config(viewModel: TvCollectionViewCellModel(tvModel: tvModel))
-            print(tvModel.displayTitle)
         }
-        
+
         dataSource = UICollectionViewDiffableDataSource<Section, TvModel>(collectionView: tvCollectionView) { [weak self]
-            (collectionView: UICollectionView, indexPath: IndexPath, identifier: TvModel) -> UICollectionViewCell? in
-            // Return the cell.
+            (collectionView: UICollectionView, indexPath: IndexPath, tvModel: TvModel) -> UICollectionViewCell? in
             guard let self = self else { return TvCollectionViewCell() }
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TvCollectionViewCell", for: indexPath) as? TvCollectionViewCell
             else { return TvCollectionViewCell() }
-            cell.config(viewModel: TvCollectionViewCellModel(tvModel: self.tvModelController.get(index: indexPath.row)))
+            cell.config(viewModel: TvCollectionViewCellModel(tvModel: tvModel))
             return cell
         }
     }
-    
+
     private func performQuery(with filter: TvModel.VideoType?) {
         let tvList = self.tvModelController.filteredTvList(with: filter)
         var snapshot = NSDiffableDataSourceSnapshot<Section, TvModel>()
@@ -98,7 +100,7 @@ extension MainViewController {
         snapshot.appendItems(tvList, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
-    
+
     private func performQuery(with filter: String?) {
         let tvList = self.tvModelController.filteredTvList(with: filter)
         var snapshot = NSDiffableDataSourceSnapshot<Section, TvModel>()

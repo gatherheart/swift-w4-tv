@@ -8,15 +8,15 @@
 import UIKit
 
 protocol MainTopViewDelegate: NSObject {
-    func didSegmentChange(segmentControll: UISegmentedControl)
+    func didSegmentChange(segmentControl: UISegmentedControl)
 }
 
 class MainTopView: UIView {
-    
+
     weak var delegate: MainTopViewDelegate?
 
     @IBOutlet weak var segmentController: UISegmentedControl!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -28,16 +28,15 @@ class MainTopView: UIView {
     deinit {
         segmentController?.removeTarget(self, action: #selector(segmentChanged), for: UIControl.Event.valueChanged)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         segmentController?.addTarget(self, action: #selector(segmentChanged), for: UIControl.Event.valueChanged)
     }
-    
-    @objc func segmentChanged(segmentControll: UISegmentedControl) {
-        delegate?.didSegmentChange(segmentControll: segmentControll)
-    }
 
+    @objc func segmentChanged(segmentControl: UISegmentedControl) {
+        delegate?.didSegmentChange(segmentControl: segmentControl)
+    }
 
 }
 
