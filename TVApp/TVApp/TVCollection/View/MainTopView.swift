@@ -17,6 +17,7 @@ class MainTopView: UIView {
 
     @IBOutlet weak var segmentController: UISegmentedControl!
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -24,18 +25,9 @@ class MainTopView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
-    deinit {
-        segmentController?.removeTarget(self, action: #selector(segmentChanged), for: UIControl.Event.valueChanged)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        segmentController?.addTarget(self, action: #selector(segmentChanged), for: UIControl.Event.valueChanged)
-    }
-
-    @objc func segmentChanged(segmentControl: UISegmentedControl) {
-        delegate?.didSegmentChange(segmentControl: segmentControl)
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        delegate?.didSegmentChange(segmentControl: segmentController)
     }
 
 }
