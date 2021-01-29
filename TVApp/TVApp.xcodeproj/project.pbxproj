@@ -30,7 +30,6 @@
 		5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */; };
 		5D4CE9A825C2941A00C9B730 /* TvModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4CE9A725C2941A00C9B730 /* TvModelController.swift */; };
 		5D50EE2E25C2FA4F0049034B /* TouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */; };
-		5D50EE3A25C3F3030049034B /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE3925C3F3030049034B /* FavoriteModel.swift */; };
 		5D50EE3D25C3FC2E0049034B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE3C25C3FC2E0049034B /* CoreDataManager.swift */; };
 		5D50EE4125C3FD030049034B /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE4025C3FD030049034B /* FavoriteTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		5D4CE9A225C2786900C9B730 /* MainViewControllerAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAutoLayout.swift; sourceTree = "<group>"; };
 		5D4CE9A725C2941A00C9B730 /* TvModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvModelController.swift; sourceTree = "<group>"; };
 		5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchHandler.swift; sourceTree = "<group>"; };
-		5D50EE3925C3F3030049034B /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		5D50EE3C25C3FC2E0049034B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5D50EE4025C3FD030049034B /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +136,6 @@
 			children = (
 				5D4CE97925C04D8C00C9B730 /* TvModel.swift */,
 				5D4CE97C25C055B700C9B730 /* TvUseCase.swift */,
-				5D50EE3925C3F3030049034B /* FavoriteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D50EE4125C3FD030049034B /* FavoriteTableViewController.swift in Sources */,
-				5D50EE3A25C3F3030049034B /* FavoriteModel.swift in Sources */,
 				5D4B73F425BE8492004417B3 /* MainViewController.swift in Sources */,
 				5D4CE98B25C1093D00C9B730 /* TvCollectionView.swift in Sources */,
 				5D4CE99F25C2656F00C9B730 /* MainTopView.swift in Sources */,
