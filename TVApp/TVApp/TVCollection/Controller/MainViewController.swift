@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
 
@@ -13,6 +14,7 @@ class MainViewController: UIViewController {
     var mainTopView: MainTopView!
     let tvModelController = TvModelController()
     let touchHandler = TouchHandler()
+    let coreDataManger = CoreDataManager()
     var dataSource: UICollectionViewDiffableDataSource<Section, TvModel>!
     var nameFilter: String?
     let topViewHeight: CGFloat = 120
@@ -57,7 +59,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func goToFavoriteView(_ sender: Any) {
-
+        self.performSegue(withIdentifier: "goToFavoriteView", sender: sender)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,9 +68,13 @@ class MainViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchHandler.determineGestureType(touches, with: event) {type in
+        touchHandler.determineGestureType(touches, with: event) { [weak self] type in
             if type == .longPress {
-                // to-do: Handle Long Press Event
+                if let cell = touches.first?.view as? TvCollectionViewCell {
+                    if let tvModel = self?.tvModelController.findById(id: cell.id) {
+                        self?.coreDataManger.save(tvModel: tvModel)
+                    }
+                }
             }
         }
     }
