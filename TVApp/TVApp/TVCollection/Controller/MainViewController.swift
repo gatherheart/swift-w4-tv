@@ -106,12 +106,8 @@ extension MainViewController {
     enum Section: CaseIterable {
         case main
     }
+    
     func configureDataSource() {
-        let cellRegistration = TvCollectionView.CellRegistration
-        <TvCollectionViewCell, TvModel> { (cell, _, tvModel) in
-            cell.config(viewModel: TvCollectionViewCellModel(tvModel: tvModel))
-        }
-
         dataSource = UICollectionViewDiffableDataSource<Section, TvModel>(collectionView: tvCollectionView) { [weak self]
             (collectionView: UICollectionView, indexPath: IndexPath, tvModel: TvModel) -> UICollectionViewCell? in
             guard let self = self else { return TvCollectionViewCell() }
