@@ -11,6 +11,8 @@ class TvCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var animationImage: UIImageView!
+    
     var id: Int = 0
     
     override init(frame: CGRect) {

@@ -32,6 +32,7 @@
 		5D50EE2E25C2FA4F0049034B /* TouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */; };
 		5D50EE3D25C3FC2E0049034B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE3C25C3FC2E0049034B /* CoreDataManager.swift */; };
 		5D50EE4125C3FD030049034B /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE4025C3FD030049034B /* FavoriteTableViewController.swift */; };
+		5D50EE4625C44FC00049034B /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50EE4525C44FC00049034B /* AnimationHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchHandler.swift; sourceTree = "<group>"; };
 		5D50EE3C25C3FC2E0049034B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5D50EE4025C3FD030049034B /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		5D50EE4525C44FC00049034B /* AnimationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				5D50EE2D25C2FA4F0049034B /* TouchHandler.swift */,
 				5D50EE3C25C3FC2E0049034B /* CoreDataManager.swift */,
+				5D50EE4525C44FC00049034B /* AnimationHandler.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				5D4B73FA25BE8492004417B3 /* TVApp.xcdatamodeld in Sources */,
 				5D4CE9A325C2786900C9B730 /* MainViewControllerAutoLayout.swift in Sources */,
 				5D50EE3D25C3FC2E0049034B /* CoreDataManager.swift in Sources */,
+				5D50EE4625C44FC00049034B /* AnimationHandler.swift in Sources */,
 				5D4CE97625C04C6400C9B730 /* Network.swift in Sources */,
 				5D50EE2E25C2FA4F0049034B /* TouchHandler.swift in Sources */,
 				5D4B73F025BE8492004417B3 /* AppDelegate.swift in Sources */,
