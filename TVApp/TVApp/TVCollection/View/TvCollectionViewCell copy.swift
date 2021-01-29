@@ -11,7 +11,8 @@ class TvCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-
+    var id: Int = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -29,13 +30,15 @@ class TvCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func config(image: String, title: String, description: String) {
+    func config(id: Int, image: String, title: String, description: String) {
+        self.id = id
         self.thumbnail.image = UIImage(named: image)
         self.title.text = title
         self.descriptionLabel.text = description
     }
 
     func config(viewModel: TvCollectionViewCellModel) {
+        id = viewModel.id
         title?.text = viewModel.title
         thumbnail?.contentMode = .scaleAspectFit
         if viewModel.videoType == .CLIP {

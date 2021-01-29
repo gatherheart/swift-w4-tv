@@ -12,7 +12,8 @@ struct TvCollectionViewCellModel {
     enum TimeUnit: Int {
         case second=1, minute=60, hour=3600, day=86400
     }
-
+    
+    let id: Int
     let image: UIImage!
     let title: String
     let duration: String
@@ -22,6 +23,7 @@ struct TvCollectionViewCellModel {
     let videoType: TvModel.VideoType
 
     init(tvModel: TvModel) {
+        id = tvModel.id
         title = tvModel.displayTitle
         channelName = tvModel.channel.name
         videoType = tvModel.videoType

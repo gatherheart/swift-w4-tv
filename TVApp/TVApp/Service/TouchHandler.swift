@@ -14,7 +14,7 @@ class TouchHandler {
     }
 
     var startTime: DispatchTime!
-    let longPressStandard: Double = 3
+    let longPressInterval: Double = 2
     
     func determineGestureType(_ touches: Set<UITouch>, with event: UIEvent?, completed: ((_ type: GestureType)->())?) {
         var type: GestureType = .none
@@ -24,8 +24,7 @@ class TouchHandler {
             let nanoTime = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
             let timeInterval = Double(nanoTime) / 1_000_000_000
             self.startTime = nil
-            
-            if timeInterval > longPressStandard {
+            if timeInterval > longPressInterval {
                 type = .longPress
             }
         }
