@@ -72,7 +72,22 @@ class MainViewController: UIViewController {
             if type == .longPress {
                 if let cell = touches.first?.view as? TvCollectionViewCell {
                     guard let tvModel = self?.tvModelController.findById(id: cell.id) else { return }
+                    self?.coreDataManger.deleteAll()
                     self?.coreDataManger.save(tvModel: tvModel)
+                    cell.animationImage.image = UIImage(systemName: "heart.fill")
+                    
+                    let defaultValue = cell.animationImage.frame.origin
+                    let animation = {
+                        cell.animationImage.alpha = 1
+                        cell.animationImage.frame.origin = defaultValue
+                    }
+                    UIView.animate(withDuration: TimeInterval(1), delay: 0, usingSpringWithDamping: CGFloat(0.5), initialSpringVelocity: CGFloat(0.5), options: .curveLinear, animations: animation)
+                    {_ in
+                        UIView.animate(withDuration: TimeInterval(0.5), animations: {cell.animationImage.alpha = 0 }, completion: nil)
+                    }
+                    
+                    
+                    
                 }
             }
         }
@@ -82,7 +97,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainTopViewDelegate {
     func didSegmentChange(segmentControl: UISegmentedControl) {
-        performQuery(with: TvModel.VideoType(rawValue: ["CLIP", "LIVE"][segmentControl.selectedSegmentIndex]))
+        let index = segmentControl.selectedSegmentIndex
+        performQuery(with: TvModel.VideoType(rawValue: ["CLIP", "LIVE"][index]))
     }
 }
 
