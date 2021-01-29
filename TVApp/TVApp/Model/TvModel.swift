@@ -11,6 +11,17 @@ struct TvModel: Codable, Hashable {
 
     enum VideoType: String, Codable {
         case CLIP, LIVE
+        
+        init?(rawValue: String) {
+            switch rawValue {
+            case "CLIP":
+                self = .CLIP
+            case "LIVE":
+                self = .LIVE
+            default: return nil
+            }
+        }
+        
     }
 
     let id: Int

@@ -15,7 +15,7 @@ class MainTopView: UIView {
 
     weak var delegate: MainTopViewDelegate?
 
-    @IBOutlet weak var segmentController: UISegmentedControl!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
 
     
     override init(frame: CGRect) {
@@ -27,7 +27,7 @@ class MainTopView: UIView {
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
-        delegate?.didSegmentChange(segmentControl: segmentController)
+        delegate?.didSegmentChange(segmentControl: segmentControl)
     }
 
 }

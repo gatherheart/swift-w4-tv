@@ -8,8 +8,8 @@
 import Foundation
 
 class TvModelController {
-    var tvList: [TvModel] = [TvModel]()
-    let bundleManager: BundleManager = BundleManager()
+    private var tvList: [TvModel] = [TvModel]()
+    private let bundleManager: BundleManager = BundleManager()
 
     init() {
         getTvList()

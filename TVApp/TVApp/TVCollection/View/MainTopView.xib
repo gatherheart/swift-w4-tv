@@ -74,7 +74,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="segmentController" destination="RZu-JX-xYL" id="IcH-TY-cgy"/>
+                <outlet property="segmentControl" destination="RZu-JX-xYL" id="IcH-TY-cgy"/>
             </connections>
             <point key="canvasLocation" x="244.92753623188409" y="575.89285714285711"/>
         </view>

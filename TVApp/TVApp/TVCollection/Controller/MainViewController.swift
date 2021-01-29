@@ -71,9 +71,8 @@ class MainViewController: UIViewController {
         touchHandler.determineGestureType(touches, with: event) { [weak self] type in
             if type == .longPress {
                 if let cell = touches.first?.view as? TvCollectionViewCell {
-                    if let tvModel = self?.tvModelController.findById(id: cell.id) {
-                        self?.coreDataManger.save(tvModel: tvModel)
-                    }
+                    guard let tvModel = self?.tvModelController.findById(id: cell.id) else { return }
+                    self?.coreDataManger.save(tvModel: tvModel)
                 }
             }
         }
@@ -83,15 +82,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainTopViewDelegate {
     func didSegmentChange(segmentControl: UISegmentedControl) {
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            performQuery(with: TvModel.VideoType.CLIP)
-        case 1:
-            performQuery(with: TvModel.VideoType.LIVE)
-        default:
-            performQuery(with: TvModel.VideoType.CLIP)
-
-        }
+        performQuery(with: TvModel.VideoType(rawValue: ["CLIP", "LIVE"][segmentControl.selectedSegmentIndex]))
     }
 }
 

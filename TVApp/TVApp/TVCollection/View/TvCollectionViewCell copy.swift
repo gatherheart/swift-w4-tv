@@ -41,11 +41,7 @@ class TvCollectionViewCell: UICollectionViewCell {
         id = viewModel.id
         title?.text = viewModel.title
         thumbnail?.contentMode = .scaleAspectFit
-        if viewModel.videoType == .CLIP {
-            thumbnail?.image = viewModel.image
-        } else if viewModel.videoType == .LIVE {
-            thumbnail?.image = viewModel.image
-        }
+        thumbnail?.image = viewModel.image
         descriptionLabel?.text = "\(viewModel.channelName) \(viewModel.viewCount) \(viewModel.createTime)"
     }
 
