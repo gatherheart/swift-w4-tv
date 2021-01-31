@@ -8,5 +8,13 @@
 import UIKit
 
 class AnimationHandler {
+    let view: UIView
     
+    init(frame: CGRect) {
+        view = UIView(frame: frame)
+    }
+    
+    private func spring() {
+        
+    }
 }

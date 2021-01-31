@@ -20,11 +20,6 @@
                         <constraint firstAttribute="height" constant="1" id="71D-Iu-ANZ"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-VU-sg8">
-                    <rect key="frame" x="10" y="8" width="394" height="28"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-VO-6cL" userLabel="BottomView">
                     <rect key="frame" x="0.0" y="54" width="414" height="60"/>
                     <subviews>
@@ -53,20 +48,25 @@
                         <constraint firstAttribute="bottom" secondItem="RZu-JX-xYL" secondAttribute="bottom" constant="25" id="pRU-Ii-rvf"/>
                     </constraints>
                 </view>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vJ6-ED-OoJ">
+                    <rect key="frame" x="0.0" y="1" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8YD-6J-cbZ"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
-                <constraint firstItem="vsC-VU-sg8" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" constant="10" id="3UC-oU-L3B"/>
+                <constraint firstItem="vJ6-ED-OoJ" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="1VS-5s-uVs"/>
                 <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="5z4-Kl-AqM"/>
-                <constraint firstAttribute="trailing" secondItem="vsC-VU-sg8" secondAttribute="trailing" constant="10" id="8rx-vd-7Pr"/>
                 <constraint firstAttribute="trailing" secondItem="VQa-VO-6cL" secondAttribute="trailing" id="KZ4-JE-cz0"/>
                 <constraint firstItem="VQa-VO-6cL" firstAttribute="leading" secondItem="COq-OF-srm" secondAttribute="leading" id="Kcq-1o-N5D"/>
-                <constraint firstItem="vsC-VU-sg8" firstAttribute="centerX" secondItem="COq-OF-srm" secondAttribute="centerX" id="L0Z-vs-bOT"/>
+                <constraint firstItem="vJ6-ED-OoJ" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="1" id="RmW-4a-6Rp"/>
                 <constraint firstItem="eB3-zm-zAc" firstAttribute="leading" secondItem="VQa-VO-6cL" secondAttribute="leading" id="Ssm-Re-Ddt"/>
-                <constraint firstItem="eB3-zm-zAc" firstAttribute="top" secondItem="vsC-VU-sg8" secondAttribute="bottom" constant="8" symbolic="YES" id="gXn-Pn-Zzw"/>
-                <constraint firstItem="vsC-VU-sg8" firstAttribute="top" secondItem="COq-OF-srm" secondAttribute="top" constant="8" id="nrb-Fd-XFc"/>
+                <constraint firstItem="vJ6-ED-OoJ" firstAttribute="centerX" secondItem="COq-OF-srm" secondAttribute="centerX" id="Wgs-HG-U2S"/>
+                <constraint firstAttribute="trailing" secondItem="vJ6-ED-OoJ" secondAttribute="trailing" id="k2a-YC-JHp"/>
                 <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="VQa-VO-6cL" secondAttribute="centerX" id="p76-4H-Q3Q"/>
-                <constraint firstItem="eB3-zm-zAc" firstAttribute="centerX" secondItem="vsC-VU-sg8" secondAttribute="centerX" id="qkI-vI-8SP"/>
                 <constraint firstAttribute="bottom" secondItem="VQa-VO-6cL" secondAttribute="bottom" id="sDh-k5-V2t"/>
                 <constraint firstItem="VQa-VO-6cL" firstAttribute="top" secondItem="eB3-zm-zAc" secondAttribute="bottom" constant="9" id="yrF-k7-xRf"/>
             </constraints>
@@ -74,6 +74,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="search" destination="vJ6-ED-OoJ" id="tEb-r3-KeU"/>
                 <outlet property="segmentControl" destination="RZu-JX-xYL" id="IcH-TY-cgy"/>
             </connections>
             <point key="canvasLocation" x="244.92753623188409" y="575.89285714285711"/>

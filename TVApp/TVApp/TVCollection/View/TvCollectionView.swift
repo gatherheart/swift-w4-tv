@@ -6,12 +6,7 @@
 //
 
 import UIKit
-extension UICollectionView {
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        print("TOUCH UIVIEW", touches.first?.view)
-    }
-}
+
 class TvCollectionView: UICollectionView {
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
