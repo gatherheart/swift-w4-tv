@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
 
     private func setMainTopView() {
         let bundle = Bundle.init(for: self.classForCoder)
-        guard let subView = bundle.loadNibNamed("MainTopView", owner: self, options: nil)?.first as? MainTopView else { return }
+        guard let subView = UINib(nibName: "MainTopView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? MainTopView else { return }
         self.view.addSubview(subView)
         mainTopView = subView
         mainTopView.delegate = self
@@ -72,7 +72,6 @@ class MainViewController: UIViewController {
             if type == .longPress {
                 if let cell = touches.first?.view as? TvCollectionViewCell {
                     guard let tvModel = self?.tvModelController.findById(id: cell.id) else { return }
-                    self?.coreDataManger.deleteAll()
                     self?.coreDataManger.save(tvModel: tvModel)
                     cell.animationImage.image = UIImage(systemName: "heart.fill")
                     
@@ -85,9 +84,6 @@ class MainViewController: UIViewController {
                     {_ in
                         UIView.animate(withDuration: TimeInterval(0.5), animations: {cell.animationImage.alpha = 0 }, completion: nil)
                     }
-                    
-                    
-                    
                 }
             }
         }
@@ -99,6 +95,9 @@ extension MainViewController: MainTopViewDelegate {
     func didSegmentChange(segmentControl: UISegmentedControl) {
         let index = segmentControl.selectedSegmentIndex
         performQuery(with: TvModel.VideoType(rawValue: ["CLIP", "LIVE"][index]))
+    }
+    func didSearchChange(search: UISearchBar) {
+        performQuery(with: search.text)
     }
 }
 
